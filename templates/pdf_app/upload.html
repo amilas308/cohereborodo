@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload PDF</title>
     <style>
+      *{
+        margin: 0;
+        padding: 0;
+        line-height: 1.4rem;
+      }
         form {
           max-width: 500px;
-          margin: 0 auto;
+          margin: 2rem auto;
           padding: 20px;
           background-color: #f4f4f4;
           border-radius: 5px;
@@ -43,19 +48,112 @@
           font-size: 16px;
           font-weight: bold;
           cursor: pointer;
+          transition: all 1.9s ease;
         }
   
         button[type="submit"]:hover {
           background-color: #0059b3;
         }
+        header{
+          background-color: #0080ff;
+          height: 2rem;
+          padding: .4rem;
+        }
+        nav{
+          display: flex;
+          justify-content: space-between;
+        }
+        .thingstopmiddle ul{
+          display: flex;
+          flex-direction: row;
+        }
+        .thingstopmiddle ul li{
+          list-style: none;
+          padding: .2rem .5rem;
+          height: 2rem;
+          transition: all 1.9s ease;
+        }
+        .thingstopmiddle ul li a{
+          text-decoration: none;
+          color: #ddd;
+          font-size: .8rem;
+        }
+        .thingstopmiddle ul li:hover{
+          background-color: #fff;
+          color: #0080ff;
+        }
+        .thingstopmiddle ul li:hover a{
+          /* background-color: #fff; */
+          color: #0080ff;
+        }
+        .thingstopend{
+          display: flex;
+          flex-direction: row;
+          padding-right: .9rem;
+        }
+        .thingstopend span{
+          padding: .4rem;
+        }
+        .second{
+          margin: 4rem auto;
+        }
+        .second h1{
+          text-align: center;
+          letter-spacing: .3rem;
+          text-decoration: dashed;
+        }
+        body{
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+        }
+        footer{
+          margin-top: auto;
+          background-color: #0c67c2;
+          height: 3rem;
+        }
+        footer h3{
+          text-align: center;
+          color: #fff;
+          padding-top: .6rem;
+        }
       </style>
 </head>
 <body>
+  <section>
+    <header>
+      <nav>
+      <div class="thingstop">
+        <img src="" alt="logo image">
+      </div>
+      <div class="thingstopmiddle">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Signin</a></li>
+        </ul>
+      </div>
+      <div class="thingstopend">
+        <span><a href="#"><i class="fas-fa-facebook">i</i></a></span>
+        <span><a href="#"><i class="fas-fa-facebook">i</i></a></span>
+        <span><a href="#"><i class="fas-fa-facebook">i</i></a></span>
+        <span><a href="#"><i class="fas-fa-facebook">i</i></a></span>
+      </div>
+    </nav>
+    </header>
+  </section>
+  <section class="second">
     <h1>Upload PDF</h1>
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" action="" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="file" name="pdf_file" accept=".pdf">
         <button type="submit">Summarize</button>
     </form>
+  </section>
+  <footer>
+    <h3>&copy;Copyright Buk 2024</h3>
+  </footer>
 </body>
 </html>

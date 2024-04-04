@@ -8,7 +8,9 @@ from googletrans import Translator
 from pdfminer.high_level import extract_text
 from pdf_app.models import PDFDocument  # Assuming you have a model named PDFDocument
 
-
+def upload_view(request):
+    # Your view logic here
+    return render(request, 'pdf_app/upload.html')
 def upload_pdf(request):
     if request.method == 'POST':
         pdf_file = request.FILES['pdf_file']
